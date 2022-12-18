@@ -1,2 +1,2 @@
 # ubiquitous-computing-machine
-react + vite + tailwind boilerpale plus todo app
+`react + vite + tailwind` boilerpale plus `todo app`
