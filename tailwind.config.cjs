@@ -1,23 +1,27 @@
-const colors = require("tailwindcss/colors");
+const colors = require('tailwindcss/colors');
 
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  darkMode: "class",
-  content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
+  darkMode: 'class',
+  content: ['./index.html', './src/**/*.{js,ts,jsx,tsx}'],
   theme: {
     screens: {
-      sm: "640px",
-      md: "768px",
-      lg: "1024px",
-      xl: "1280px",
-      "2xl": "1536px",
+      sm: '640px',
+      md: '768px',
+      lg: '1024px',
+      xl: '1280px',
+      '2xl': '1536px',
     },
-    extend: {},
+    extend: {
+      colors: {
+        main: colors.stone,
+      },
+    },
   },
   plugins: [
-    require("@tailwindcss/forms"),
+    require('@tailwindcss/forms'),
     function ({ addVariant }) {
-      addVariant("children", "& > *");
+      addVariant('children', '& > *');
     },
   ],
 };

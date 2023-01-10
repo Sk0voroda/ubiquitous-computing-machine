@@ -1,5 +1,5 @@
 {
-  "name": "todo-vite",
+  "name": "ubiquitous-computing-machine",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -9,7 +9,9 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@tanstack/react-router": "^0.0.1-beta.41",
     "clsx": "^1.2.1",
+    "pocketbase": "^0.9.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "simple-runtypes": "^7.1.2"
