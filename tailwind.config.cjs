@@ -16,6 +16,9 @@ module.exports = {
       colors: {
         main: colors.stone,
       },
+      fontSize: {
+        sx: '0.75rem',
+      },
     },
   },
   plugins: [

@@ -1,19 +1,15 @@
 import { useState, useCallback, useEffect, memo } from 'react';
-import * as st from 'simple-runtypes';
 import clsx from 'clsx';
 
-import { collection, authStore } from '../services';
+import { collection, authStore } from '../../services';
 
-import { Layout } from './common';
-import { LoginView } from './LoginView';
+import { Layout } from '../common';
 
-// TODO: add error handling
-const ItemRuntype = st.record({
-  id: st.string(),
-  task: st.string(),
-  done: st.boolean(),
-});
-type Todo = ReturnType<typeof ItemRuntype>;
+type Todo = {
+  id: string;
+  task: string;
+  done: boolean;
+};
 
 const ToDoItem: React.FC<
   { onDelete: (id: string) => void; onUpdate: (task: Todo) => void } & Todo
@@ -66,7 +62,7 @@ const ToDoItem: React.FC<
 
 const ToDoItemMemo = memo(ToDoItem);
 
-function App() {
+export const MainView = () => {
   // TODO: try to add dark theme later
   // const [darkMode, setDarkMode] = useState(true);
   const [todos, setTodos] = useState<Todo[]>([]);
@@ -117,14 +113,6 @@ function App() {
     }
   }, []);
 
-  if (!authStore.isValid) {
-    return (
-      <Layout>
-        <LoginView />
-      </Layout>
-    );
-  }
-
   return (
     <Layout>
       {/* TODO: header add logo name and theme switch */}
@@ -141,6 +129,4 @@ function App() {
       </div>
     </Layout>
   );
-}
-
-export default App;
+};
