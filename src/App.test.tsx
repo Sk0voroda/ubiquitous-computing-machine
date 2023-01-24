@@ -1,11 +1,11 @@
-import { render, screen } from '@testing-library/react';
+import { it, describe, expect } from 'vitest';
+import { render } from '@testing-library/react';
 
 import { App } from './App';
 
 describe('App', () => {
-  beforeEach(() => {
-    render(<App />);
+  it('renders', () => {
+    const { asFragment } = render(<App />);
+    expect(asFragment()).toMatchSnapshot();
   });
-
-  it('renders headline', () => {});
 });

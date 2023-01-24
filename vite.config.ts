@@ -1,6 +1,7 @@
 import { defineConfig, splitVendorChunkPlugin } from 'vite';
 import react from '@vitejs/plugin-react';
 import svgr from 'vite-plugin-svgr';
+import path from 'path';
 
 import analyze from 'rollup-plugin-analyzer';
 
@@ -16,6 +17,11 @@ export default defineConfig({
           vendor: ['react', 'react-dom'],
         },
       },
+    },
+  },
+  resolve: {
+    alias: {
+      '@views': path.resolve(__dirname, 'src/views'),
     },
   },
 });

@@ -1,0 +1,46 @@
+// Vitest Snapshot v1
+
+exports[`App > renders 1`] = `
+<DocumentFragment>
+  <header
+    class="fixed top-0 left-0 right-0 z-10 overflow-hidden bg-white font-mono text-blue-600 shadow-md"
+  >
+    <div
+      class="container mx-auto flex flex-wrap items-center justify-between py-1 px-3"
+    >
+      <a
+        class="focus-outline flex items-center p-1 font-medium lg:items-center lg:justify-center"
+        href="/"
+      >
+        <img
+          class="h-8 w-8"
+          src="/src/assets/images/the-brain-logo.svg"
+        />
+        <span
+          class="invisible ml-0 w-0 text-xl sm:visible sm:ml-3 sm:w-auto"
+        >
+          WONTDO
+        </span>
+      </a>
+      <p
+        class="text-sm font-thin"
+      >
+        <span
+          class="invisible mr-0 text-xs text-black sm:visible sm:mr-2"
+        >
+          Don't have an account?
+        </span>
+        <a
+          class="focus-outline p-1 underline decoration-1 underline-offset-2 hover:no-underline hover:decoration-0"
+          href="/registration"
+        >
+          Sign up
+        </a>
+      </p>
+    </div>
+  </header>
+  <main
+    class="flex h-screen overflow-auto bg-stone-100"
+  />
+</DocumentFragment>
+`;

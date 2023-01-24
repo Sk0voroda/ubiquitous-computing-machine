@@ -4,6 +4,8 @@ import clsx from 'clsx';
 import { collection, authStore } from '../../services';
 
 import { Layout } from '../common';
+import { useNavigate } from 'react-router-dom';
+import { Routes } from '../../routes';
 
 type Todo = {
   id: string;
@@ -63,21 +65,20 @@ const ToDoItem: React.FC<
 const ToDoItemMemo = memo(ToDoItem);
 
 export const MainView = () => {
+  const navigate = useNavigate();
+
   // TODO: try to add dark theme later
   // const [darkMode, setDarkMode] = useState(true);
   const [todos, setTodos] = useState<Todo[]>([]);
 
   useEffect(() => {
-    // TODO: change it, move somewhere
-    if (authStore.isValid) {
-      const getTodos = async () => {
+    // TODO: change
+    (async () => {
+      if (authStore.isValid) {
         const result = await collection('todos').getList<Todo>(1, 20);
-
         setTodos(result.items);
-      };
-
-      getTodos();
-    }
+      }
+    })();
   }, []);
 
   const onRemove = useCallback(async (id: string) => {

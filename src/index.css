@@ -6,10 +6,18 @@
   .focus-outline {
     @apply focus:outline-dashed focus:outline-2 focus:outline-offset-2 focus:outline-sky-500;
   }
+
+  .input-errors {
+    @apply border-red-600 hover:border-red-600 focus:border-red-600;
+  }
 }
 
 @layer components {
   .input-styled {
     @apply focus-outline form-input h-9 w-full rounded border border-solid border-gray-300 bg-white px-2 py-1 font-sans text-sm text-gray-700 transition duration-100 ease-in-out hover:border-blue-400 focus:border-blue-400 focus:text-gray-700 focus:shadow-none focus:ring-0;
+  }
+
+  .link-styled {
+    @apply p-1 underline decoration-1 underline-offset-2 hover:no-underline hover:decoration-0;
   }
 }

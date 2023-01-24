@@ -3219,10 +3219,10 @@ pkg-types@^1.0.1:
     mlly "^1.0.0"
     pathe "^1.0.0"
 
-pocketbase@^0.9.1:
-  version "0.9.1"
-  resolved "https://registry.yarnpkg.com/pocketbase/-/pocketbase-0.9.1.tgz#5a90bc9de7404a8da78621aca1dc9ea550f32ed5"
-  integrity sha512-a9S/WHak+mgr3WI8bD2tz3lFVFzoy6ZgKTBlUXwIH4VLTKVU3JKeAKxqIFBF7av4qblmB+52tX8sWLS08Ftm/w==
+pocketbase@^0.10.1:
+  version "0.10.1"
+  resolved "https://registry.yarnpkg.com/pocketbase/-/pocketbase-0.10.1.tgz#01963c61544b1bcd8db7d3e9d43d4a99dd76f630"
+  integrity sha512-FMBhF+9o2AmdKJYbfz2qunnk4Q5/efYMRcukdQF49UfhsIuaSYl39fSPN1l880bYI4XAvDDeySAjK1MlxrK37A==
 
 postcss-import@^14.1.0:
   version "14.1.0"
