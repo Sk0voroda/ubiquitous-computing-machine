@@ -1,14 +1,15 @@
-import PocketBase from 'pocketbase';
+import { createClient } from '@supabase/supabase-js';
 
 // TODO: move to env
-const pb = new PocketBase(import.meta.env.VITE_POCKETBASE_URL);
+const supabaseUrl = 'https://rfxpaljcpdraorcijdbv.supabase.co';
+const supabaseKey =
+  'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InJmeHBhbGpjcGRyYW9yY2lqZGJ2Iiwicm9sZSI6ImFub24iLCJpYXQiOjE2NzYwMjk4ODcsImV4cCI6MTk5MTYwNTg4N30.rbZadzenK0OQl1KOKDJBxOwIShPz0AT4w2C4kkvjK3s';
 
-const COLLECTIONS = {
-  TODOS: 'todos',
-  USERS: 'users',
-} as const;
+export const supabase = createClient(supabaseUrl, supabaseKey);
 
-type Collections = typeof COLLECTIONS[keyof typeof COLLECTIONS];
+// const COLLECTIONS = {
+//   TODOS: 'todos',
+//   USERS: 'users',
+// } as const;
 
-export const collection = (name: Collections) => pb.collection(name);
-export const { authStore } = pb;
+// type Collections = (typeof COLLECTIONS)[keyof typeof COLLECTIONS];

@@ -1,7 +1,4 @@
 import { useState, useCallback, useEffect, memo } from 'react';
-import clsx from 'clsx';
-
-import { collection, authStore } from '../../services';
 
 import { Layout } from '../common';
 import { useNavigate } from 'react-router-dom';
@@ -16,12 +13,7 @@ type Todo = {
 const ToDoItem: React.FC<
   { onDelete: (id: string) => void; onUpdate: (task: Todo) => void } & Todo
 > = ({ id, task, done, onDelete, onUpdate }) => (
-  <div
-    id={id}
-    className={`rounded-md hover:bg-stone-100 ${clsx({
-      'line-through opacity-50': done,
-    })}`}
-  >
+  <div id={id}>
     <div className="flex items-center p-2">
       <input
         id={`todo-item-${id}`}
@@ -74,10 +66,10 @@ export const MainView = () => {
   useEffect(() => {
     // TODO: change
     (async () => {
-      if (authStore.isValid) {
-        const result = await collection('todos').getList<Todo>(1, 20);
-        setTodos(result.items);
-      }
+      // if (authStore.isValid) {
+      //   const result = await collection('todos').getList<Todo>(1, 20);
+      //   setTodos(result.items);
+      // }
     })();
   }, []);
 
@@ -86,7 +78,7 @@ export const MainView = () => {
     setTodos((prev) => prev.filter((item) => item.id !== id));
 
     try {
-      await collection('todos').delete(id);
+      // await collection('todos').delete(id);
     } catch (error) {
       // revert if failed
     }
@@ -103,7 +95,7 @@ export const MainView = () => {
     );
 
     try {
-      await collection('todos').update(id, task);
+      // await collection('todos').update(id, task);
     } catch (error) {
       // revert if failed
       setTodos((prev) =>

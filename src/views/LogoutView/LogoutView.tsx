@@ -1,16 +1,15 @@
 import { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 
-import { authStore } from '../../services';
 import { Routes } from '../../routes';
 
 export const Logout = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    authStore.clear();
+    // authStore.clear();
 
-    navigate(Routes.Root, { replace: true });
+    navigate(Routes.Main, { replace: true });
   }, []);
 
   return null;
